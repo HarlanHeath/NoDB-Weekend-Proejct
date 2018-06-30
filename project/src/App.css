@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+
+.Character-Cards {
+  margin: 15px;
+  height: 275px;
+  width: 200px;
+  border: 1px solid black;
+  background: #9b2222;
+}
+
+.Add-To-Favs {
+  margin: auto;
+}
