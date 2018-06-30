@@ -1,12 +1,15 @@
 import React from "react";
-import "./navbar.css";
 
-export default navbar;
-
-const navbar = ({ homePage, showFavorites }) => {
+const NavBar = props => {
+  console.log(props);
   return (
-    <header className="header">
-      <div />
-    </header>
+    <div>
+      {/* <button />Main<button>Fav</button> */}
+      {/* <button onClick={() => props.thanManTron("I'm a good boi")}> this is a method coming from props */}{" "}
+      <input onChange={e => props.thanManTron(e.target.value)} />
+      Thanosify {/* </button> */}
+    </div>
   );
 };
+
+export default NavBar;
