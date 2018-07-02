@@ -1,36 +1,37 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
+// import axios from "axios";
+import "./Favorites.css";
 
 class Favorites extends Component {
-constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
-        title: "Favorites Page"
-    }
-}
+      title: "Favorites Page"
+    };
+  }
 
-render(){
-console.log(this.props.favorites);
+  render() {
+    console.log(this.props.favorites);
     let favorites = this.props.favorites.map((person, id) => {
-        return (
-            <div className="Character-Cards" key={id}>
-                      <h1> {person.name}</h1>
-          <h3>DOB:{person.birth_year}</h3>
-          <h3>Height:{person.height}</h3>
-          <h3>Weight:{person.mass}</h3>
+      return (
+        <div className="Favorite-Cards" key={id}>
+          <p className="Fav-Names"> {person.name}</p>
+          <p className="Fav-Char-Data">DOB:{person.birth_year}</p>
+          <p className="Fav-Char-Data">Height:{person.height}</p>
+          <p className="Fav-Char-Data">Weight:{person.mass}</p>
+          <button
+            className="Remove-Favs"
+            onClick={() => this.props.removeFavorites(person.name)}
+          >
+            {" "}
+            Execute Order 66{" "}
+          </button>
         </div>
-        )
-});
+      );
+    });
 
-
-    return(
-        <div>
-{favorites}
-</div>
-
-
-    )
+    return <div className="Favorites-Background">{favorites}</div>;
+  }
 }
 
-}
-
-export default Favorites
+export default Favorites;

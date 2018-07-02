@@ -1,0 +1,42 @@
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.Favorites-Background {
+  margin: 0px;
+  height: 100% vh;
+  width: 100% vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.Favorite-Cards {
+  margin: 15px;
+  height: 275px;
+  width: 200px;
+  border: 1px solid black;
+  background-color: #bdc3c7;
+}
+
+.Fav-Names {
+  font-family: "Audiowide", cursive;
+  font-size: 20px;
+  color: #b95c29;
+}
+
+.Fav-Char-Data {
+  font-family: "Aldrich", sans-serif;
+  color: #1a6496;
+}
+
+.Remove-Favs {
+  font-family: "Audiowide", cursive;
+  background: #2d3d4e;
+  border-radius: 28px;
+  color: #2980b9;
+  font-size: 12px;
+  padding: 11px 20px 10px 20px;
+}

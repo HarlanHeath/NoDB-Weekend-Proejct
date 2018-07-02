@@ -16,8 +16,8 @@ app.use(cors());
 //Methods that express is listening for
 app.get("/api/people", restCtrl.getPeople);
 app.post("/api/people", restCtrl.favPeople);
-app.delete("/api/people", restCtrl.removeFavs); //Need method for this
-app.put("/api/people", restCtrl.editChars)//Need the method for this
+app.post("/api/addPerson", restCtrl.addPerson);
+app.delete("/api/people/:input", restCtrl.removeFavs);
 
 app.listen(port, () => {
   console.log(`I am listening on port ${port}`);
