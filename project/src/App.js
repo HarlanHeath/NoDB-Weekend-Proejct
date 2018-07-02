@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 import NavBar from "./Components/navbar";
-// import navbar from "./Components/navbar";
+import Favorites from "./Components/Favorites";
+
 
 class App extends Component {
   constructor() {
@@ -10,14 +11,13 @@ class App extends Component {
     this.state = {
       characters: [],
       favorites: [],
-      // theView: <Person />
+      theView: true
     };
 
-    // this.bind.thanosManTron = this.bind.thanosManTron(this) // using arrow function instead
+
   }
 
   componentDidMount() {
-    // fires off when user hits your website
     axios.get("/api/people").then(res => {
       this.setState({
         characters: res.data.results
@@ -32,25 +32,29 @@ class App extends Component {
       .then(response => this.setState({ favorites: response.data }));
   }
 
-  thanosManTron = datas => {
-    console.log(datas);
+  //favs function
+  switchFavsPage = datas => {
+    // console.log(datas);
+    this.setState({theView: datas})
   };
 
+
+  
   render() {
     console.log(this.state);
     let persons = this.state.characters.map((person, id) => {
       // person is the element
       return (
         <div className="Character-Cards" key={id}>
-          <h1> {person.name}</h1>
-          <h3>DOB:{person.birth_year}</h3>
-          <h3>Height:{person.height}</h3>
-          <h3>Weight:{person.mass}</h3>
+          <p className="Char-Names"> {person.name}</p>
+          <p>DOB:{person.birth_year}</p>
+          <p>Height:{person.height}</p>
+          <p>Weight:{person.mass}</p>
           <button
             className="Add-To-Favs"
             onClick={() => this.favoritesAdder(person)}
           >
-            Click Me{" "}
+            Add to Favorites{" "}
           </button>
         </div>
       );
@@ -58,17 +62,20 @@ class App extends Component {
 
     // console.log(this.state.characters);
     return (
-      <div className="App">
-        {persons}
-
+      <div className="Body">
+      <div className="NavBar">
         <NavBar
-          fudgeMonkeys={this.state.characters}
-          thanManTron={this.thanosManTron}
+          switchFavsPage={this.switchFavsPage}
         />
-        {/* <Favorites favorites={this.state.favorites}/> */}
+        </div>
+        <div className="Characters">
+        {this.state.theView ? persons : <Favorites favorites={this.state.favorites}/>}
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+

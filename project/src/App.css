@@ -1,4 +1,27 @@
-.App {
+.Body{
+  background: gray;
+  height: 100%;
+  width: 100%;
+
+}
+
+.NavBar{
+  margin: 0 auto;
+  height: 65px;
+  width: 100% vw;
+  background: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  
+}
+
+
+
+.Characters {
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -14,6 +37,12 @@
   width: 200px;
   border: 1px solid black;
   background: #9b2222;
+  
+}
+
+.Char-Names{
+  font-family: 'Audiowide', cursive;
+  font-size: 20px;
 }
 
 .Add-To-Favs {

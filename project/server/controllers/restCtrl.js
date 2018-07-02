@@ -13,17 +13,22 @@ const getPeople = (req, res) => {
 
 const favPeople = (req, res) => {
   console.log(req.body);
-  favChars.push(req.body);
+  favChars.push(req.body.person);
   res.status(200).json(favChars);
 };
 
-const sixtySixFavs = (req, res) => {
+const removeFavs = (req, res) => {
   const indx = favChars.findIndex();
   favChars.splice(index, 1);
 };
 
+const editChars = (reg, res) => {
+
+}
+
 module.exports = {
   getPeople,
   favPeople,
-  sixtySixFavs
+  removeFavs,
+  editChars
 };
